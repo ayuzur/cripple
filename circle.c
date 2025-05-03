@@ -1,15 +1,39 @@
 #ifndef CIRCLE_C
 #define CIRCLE_C
 #include <math.h>
+#include <stdbool.h>
 
-void circle_draw(int x, int y, int r) {	
-	int ox = -r;	
-	for (int i = 0; i <= 2 * r; i++) {	
-		// out y
-		float oy = sqrtf(abs((r * r) - (ox * ox)));
-		term_pixel(ox + x, oy + y);
-		ox++;
+int getSign(int num) {
+	if (num > 0) {
+		return 1;
 	}
+	else if (num < 0) {
+		return -1;
+	}
+	else {
+		return 0;
+	}
+}
+
+bool circle_draw(int x, int y, int r) {
+	bool anyThingDrawn = false;
+
+	int relx = -r;	
+	int prevy = 0;
+	for (int i = 0; i <= r * 2; i++) {	
+		float rely = sqrtf((r * r) - (relx * relx));
+		bool drawable = false;
+		
+		drawable = term_pixel(relx + x, rely + y);
+		drawable = term_pixel(relx + x, -rely + y);
+		
+		if (drawable) {
+			anyThingDrawn = true;
+		}
+
+		relx++;
+	}	
+	return anyThingDrawn;
 }
 
 #endif

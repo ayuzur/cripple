@@ -1,14 +1,10 @@
-#include <stdio.h>
+#ifndef RIPPLE_C
+#define RIPPLE_C
 
-#include "term.c"
-#include "circle.c"
+typedef struct ripple_Ripple {
+	int x;
+	int y;
+	int radius;
+} ripple_Ripple;
 
-
-int main() {
-	term_clear();
-	term_goto(0, 0);
-
-	circle_draw(20, 20, 10);
-	
-	return 0;
-}
+#endif

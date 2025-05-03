@@ -3,15 +3,18 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-term_clear() {
+int width = 200;
+int height = 100;
+
+void term_clear() {
 	printf("\033[2J");
 }
 
-term_goto(int x, int y) {
+void term_goto(int x, int y) {
 	printf("\033[%d;%dH", y, x);
 }
 
-term_cursv(bool toggle) {
+void term_cursv(bool toggle) {
 	if (toggle) {
 		printf("\033[?25h");
 	}
@@ -20,9 +23,18 @@ term_cursv(bool toggle) {
 	}
 }
 
-term_pixel(int x, int y) {
+bool term_pixel(int x, int y) {
+
+	if (x < 0 || x > width) {
+		return false;
+	}
+	else if (y < 0 || y > height) {
+		return false;
+	}
+
 	term_goto(x * 2, y);
 	printf("##");
+	return true;
 }
 
 #endif
