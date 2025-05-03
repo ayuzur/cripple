@@ -22,4 +22,5 @@ ctrl+c to stop
 
 ## future changes
 
-- [ ] adding fade out for the ripples using character brightness
+- [x] adding fade out for the ripples using character brightness
+- [ ] clean up code

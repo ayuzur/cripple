@@ -23,7 +23,7 @@ void term_cursv(bool toggle) {
 	}
 }
 
-bool term_pixel(int x, int y) {
+bool term_pixel_ch(int x, int y, char ch) {
 
 	if (x < 0 || x > width) {
 		return false;
@@ -33,8 +33,13 @@ bool term_pixel(int x, int y) {
 	}
 
 	term_goto(x * 2, y);
-	printf("##");
+	printf("%c%c", ch, ch);
 	return true;
+}
+
+// TODO remove when all references have been changed
+bool term_pixel(int x, int y) {
+	return term_pixel_ch(x, y, '#');
 }
 
 

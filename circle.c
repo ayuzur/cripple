@@ -14,8 +14,7 @@ int getSign(int num) {
 		return 0;
 	}
 }
-
-bool circle_draw(int x, int y, int r) {
+bool circle_draw_ch(int x, int y, int r, char ch) {
 	bool anyThingDrawn = false;
 
 	int relx = -r;	
@@ -28,13 +27,13 @@ bool circle_draw(int x, int y, int r) {
 
 		//term_color(RED);
 
-		drawable = term_pixel(relx + x, rely + y);
-		drawable = term_pixel(relx + x, -rely + y);
-		
+		drawable = term_pixel_ch(relx + x, rely + y, ch);
+		drawable = term_pixel_ch(relx + x, -rely + y, ch);
+
 		if (drawable) {
 			anyThingDrawn = true;
 		}
-		
+
 
 		if (i == 0) {
 			relx++;
@@ -47,6 +46,7 @@ bool circle_draw(int x, int y, int r) {
 		int y1;
 		int y2;
 		int xToUse;
+		
 		if (prevy < rely) {
 			y1 = prevy;
 			y2 = rely;
@@ -65,26 +65,29 @@ bool circle_draw(int x, int y, int r) {
 
 			// DEBUG stuff
 			/*
-			if (a == 1) {
-				term_color(BLUE);
-			}
-			else {
-				term_color(GREEN);
-			}
-			*/
+			   if (a == 1) {
+			   term_color(BLUE);
+			   }
+			   else {
+			   term_color(GREEN);
+			   }
+			   */
 
-			term_pixel(xToUse + x, y2 + (a * sign) + y);
-			term_pixel(xToUse + x, -y2 + (a * -sign) + y);
+			term_pixel_ch(xToUse + x, y2 + (a * sign) + y, ch);
+			term_pixel_ch(xToUse + x, -y2 + (a * -sign) + y, ch);
 			//term_pixel(relx + x, rely + (a * sign) + y);
 			//term_pixel(relx + x, -rely + (a * -sign) + y);
 		}
 
 		relx++;
 	}	
-	
+
 	//term_color(RESET);
-	
+
 	return anyThingDrawn;
+}
+bool circle_draw(int x, int y, int r) {
+	return circle_draw_ch(x, y, r, '#');
 }
 
 #endif
