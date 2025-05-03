@@ -18,6 +18,9 @@ cl
 
 run the executable
 
+It can take the width and height of your terminal as the first two command line 
+args
+
 ctrl+c to stop
 
 ## future changes
