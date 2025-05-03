@@ -20,5 +20,10 @@ term_cursv(bool toggle) {
 	}
 }
 
+term_pixel(int x, int y) {
+	term_goto(x * 2, y);
+	printf("##");
+}
+
 #endif
 
