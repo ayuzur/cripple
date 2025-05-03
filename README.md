@@ -2,7 +2,7 @@
 
 c ripple
 
-a terminal screen saver that replicates the ripples caused by rainfall
+a c program that replicates the ripples caused by rainfall in your terminal
 
 ## build
 
