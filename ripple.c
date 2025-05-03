@@ -4,7 +4,7 @@
 typedef struct ripple_Ripple {
 	int x;
 	int y;
-	int radius;
+	int r;
 } ripple_Ripple;
 
 #endif

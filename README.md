@@ -19,3 +19,7 @@ cl
 run the executable
 
 ctrl+c to stop
+
+## future changes
+
+- [ ] adding fade out for the ripples using character brightness

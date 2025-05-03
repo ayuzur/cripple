@@ -37,5 +37,36 @@ bool term_pixel(int x, int y) {
 	return true;
 }
 
+
+enum Color {RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET};
+
+void term_color(enum Color color) {
+	switch(color) {
+		case RED:
+			printf("\033[31m");
+			break;
+		case GREEN:
+			printf("\033[32m");
+			break;
+		case YELLOW:
+			printf("\033[33m");
+			break;
+		case BLUE:
+			printf("\033[34m");
+			break;
+		case MAGENTA:
+			printf("\033[35m");
+			break;
+		case CYAN:
+			printf("\033[36m");
+			break;
+		case WHITE:
+			printf("\033[37m");
+			break;
+		case RESET:
+			printf("\033[0m");
+			break;
+	}
+}
 #endif
 
