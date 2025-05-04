@@ -2,7 +2,12 @@
 
 c ripple
 
-a c program that replicates the ripples caused by rainfall in your terminal
+a c program that replicates the ripple effect caused by rainfall in your terminal
+
+![image](https://github.com/user-attachments/assets/67819231-bb1c-42b9-be09-74f4c0ade915)
+
+> [!WARNING]
+> I am not a professional programmer. Run at your own risk!
 
 ## build
 
