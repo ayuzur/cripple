@@ -23,6 +23,8 @@ cl
 
 run the executable
 
+you will likely have to zoom out to see
+
 It can take the width and height of your terminal as the first two command line 
 args
 
