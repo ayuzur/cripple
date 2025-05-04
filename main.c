@@ -14,7 +14,7 @@
 #define SPEED 1
 #define FADE 2
 
-sigint_exit_handler(int sig) {
+void sigint_exit_handler(int sig) {
 	term_cursv(true);
 	term_clear();
 	term_goto(0, 0);
