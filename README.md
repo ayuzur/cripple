@@ -4,6 +4,8 @@ c ripple
 
 a c program that replicates the ripple effect caused by rainfall in your terminal
 
+[youtube video](https://www.youtube.com/watch?v=--bYD3uoGb8)
+
 ![image](https://github.com/user-attachments/assets/67819231-bb1c-42b9-be09-74f4c0ade915)
 
 > [!WARNING]
